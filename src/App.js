@@ -11,10 +11,11 @@ function App() {
     { id: 3, name: "Product-3", price: 300 },
   ];
   const [cart, setCart] = useState([]);
+  const cartArr = [...cart];
   return (
     <GlobalProvider>
       <div>
-        <Products products={products} setCart={setCart} cart={cart} />
+        <Products products={products} setCart={setCart} cartArr={cartArr} />
         <Cart cart={cart} />
       </div>
     </GlobalProvider>
