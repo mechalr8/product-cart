@@ -9,7 +9,7 @@ const CartCard = ({cartProduct}) => {
           {cartProduct.quantity} x {cartProduct.price}
         </div>
       </div>
-      <div>Total: {cartProduct.quantity * cartProduct.price}</div>
+      
     </>
   );
 }
