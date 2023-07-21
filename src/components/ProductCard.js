@@ -58,15 +58,19 @@ const ProductCard = ({product, setCart, cartArr}) => {
 
     return (
         <div className='product-card'>
-        <div>{product.name}</div>
-        <div>{product.price}</div>
-        <div>
-            <button onClick={removeFromCartHandler}>-</button>
+            <div className='product-card-name'>{product.name}</div>
+            <div className='product-card-price'>{product.price}</div>
+            <div className='product-quanity'>
+            <button className='add-del' onClick={removeFromCartHandler}>
+                -
+            </button>
             <span>{count}</span>
-            <button onClick={addToCartHandler}>+</button>
+            <button className='add-del' onClick={addToCartHandler}>
+                +
+            </button>
+            </div>
         </div>
-        </div>
-    )
+    );
 }
 
 export default ProductCard

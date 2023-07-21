@@ -13,12 +13,10 @@ function App() {
   const [cart, setCart] = useState([]);
   const cartArr = [...cart];
   return (
-    <GlobalProvider>
-      <div>
-        <Products products={products} setCart={setCart} cartArr={cartArr} />
-        <Cart cart={cart} />
-      </div>
-    </GlobalProvider>
+    <div className='app'>
+      <Products products={products} setCart={setCart} cartArr={cartArr} />
+      <Cart cart={cart} />
+    </div>
   );
 }
 
