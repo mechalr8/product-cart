@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import Products from './components/Products';
+import Cart from './components/Cart';
+import { GlobalProvider } from './context/GlobalState';
 
 function App() {
+  const products = [
+    { id: 1, name: "Product-1", price: 100 },
+    { id: 2, name: "Product-2", price: 200 },
+    { id: 3, name: "Product-3", price: 300 },
+  ];
+  const [cart, setCart] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <div>
+        <Products products={products} setCart={setCart} cart={cart} />
+        <Cart cart={cart} />
+      </div>
+    </GlobalProvider>
   );
 }
 
